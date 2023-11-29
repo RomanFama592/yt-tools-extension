@@ -7,7 +7,7 @@
 
 "This extension allows you to enjoy several tools for the YouTube page."
 
-![use-extension-gif](https://github.com/RomanFama592/yt_tools_extension/blob/master/docs/images/use-extension.gif?raw=true)
+![use-extension-gif](https://github.com/RomanFama592/yt_tools_extension/blob/main/docs/images/use-extension.gif?raw=true)
 
 </div>
 
