@@ -1,0 +1,38 @@
+.item {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  cursor: pointer;
+  justify-content: space-between;
+  justify-items: baseline;
+  transition: background-color 0.3s ease;
+}
+
+.item:hover {
+  color: var(--shadow-color);
+  background-color: var(--background-main);
+}
+
+.title,
+.description {
+  margin: 5px;
+  text-align: center;
+}
+
+.info>.title,
+.info>.description {
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+
+.info>.title {
+  font-size: 1rem;
+}
+
+.info>.description {
+  font-size: 0.7rem;
+}

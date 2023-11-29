@@ -1,0 +1,1 @@
+python ./utils/resize_icons.py
