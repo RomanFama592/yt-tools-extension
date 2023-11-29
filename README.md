@@ -3,10 +3,11 @@
 # yt_tools_extension
 ![Contributions? Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)
 ![Maintained? Yes](https://img.shields.io/badge/Maintained%3F-Yes-brightgreen.svg)
+[![ESLint](https://github.com/RomanFama592/yt_tools_extension/actions/workflows/eslint.yml/badge.svg)](https://github.com/RomanFama592/yt_tools_extension/actions/workflows/eslint.yml)
 
 "This extension allows you to enjoy several tools for the YouTube page."
 
-![use-extension-gif](https://github.com/RomanFama592/email-read-confirmation-nodejs/blob/master/docs/images/use-extension.gif?raw=true)
+![use-extension-gif](https://github.com/RomanFama592/yt_tools_extension/blob/master/docs/images/use-extension.gif?raw=true)
 
 </div>
 
