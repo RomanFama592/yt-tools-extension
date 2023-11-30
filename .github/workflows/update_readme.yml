@@ -10,22 +10,19 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Check for changes
-        id: check_changes
-        run: |
-          changes=$(git diff --name-only)
-          echo "{changes}={$changes} >> $GITHUB_OUTPUT"
       - name: Update README.md folder map
-        if: steps.check_changes.outputs.changes != ''
         uses: RomanFama592/folder_mapping_action@v1
         with:
           template-output: "./docs/README.md.template.md"
       - name: Confirm changes and push 
-        if: steps.check_changes.outputs.changes != ''
         run: |
           git config user.name bot-update-readme
           git config user.email bot-update-readme@gmail.com
 
-          git add README.md
-          git commit -m "[bot] Update README based this commit -> $(git rev-parse --short HEAD)"
-          git push origin main
+          if git diff --quiet; then
+            echo "No hay cambios."
+          else
+            git add README.md
+            git commit -m "[bot] Update README.md changes -> $(git rev-parse --short HEAD)"
+            git push origin main
+          fi
