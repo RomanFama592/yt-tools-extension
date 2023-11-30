@@ -45,6 +45,4 @@
   
   .switch input:checked+.slider:before {
     transform: translateX(1.5em);
-    height: 2em;
-    bottom: 0; */
   }
