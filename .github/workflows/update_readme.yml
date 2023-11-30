@@ -9,12 +9,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-            fetch-depth: 0
+          fetch-depth: 0
+      - name: Check for changes
+        id: check_changes
+        run: |
+          changes=$(git diff --name-only)
+          echo "::set-output name=changes::$changes"
       - name: Update README.md folder map
+        if: steps.check_changes.outputs.changes != ''
         uses: RomanFama592/folder_mapping_action@v1
         with:
           template-output: "./docs/README.md.template.md"
       - name: Confirm changes and push 
+        if: steps.check_changes.outputs.changes != ''
         run: |
           git config user.name bot-update-readme
           git config user.email bot-update-readme@gmail.com
