@@ -1,13 +1,13 @@
 <div align="center">
 
-# yt_tools_extension
+# yt-tools-extension
 ![Contributions? Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)
 ![Maintained? Yes](https://img.shields.io/badge/Maintained%3F-Yes-brightgreen.svg)
-[![ESLint](https://github.com/RomanFama592/yt_tools_extension/actions/workflows/eslint.yml/badge.svg)](https://github.com/RomanFama592/yt_tools_extension/actions/workflows/eslint.yml)
+[![ESLint](https://github.com/RomanFama592/yt-tools-extension/actions/workflows/eslint.yml/badge.svg)](https://github.com/RomanFama592/yt-tools-extension/actions/workflows/eslint.yml)
 
 "This extension allows you to enjoy several tools for the YouTube page."
 
-![use-extension-gif](https://github.com/RomanFama592/yt_tools_extension/blob/main/docs/images/use-extension.gif?raw=true)
+![use-extension-gif](https://github.com/RomanFama592/yt-tools-extension/blob/main/docs/images/use-extension.gif?raw=true)
 
 </div>
 
@@ -121,7 +121,7 @@ npm run build
 
 ## 👋 Contributions
 
-If you have a suggestion that would make this better, please fork the repo and create a Pull Request. You can also simply [open an issue](https://github.com/RomanFama592/yt_tools_extension/issues)
+If you have a suggestion that would make this better, please fork the repo and create a Pull Request. You can also simply [open an issue](https://github.com/RomanFama592/yt-tools-extension/issues)
 
 Don't forget to **give the project a star ⭐!** Thanks again!
 
@@ -130,7 +130,7 @@ Don't forget to **give the project a star ⭐!** Thanks again!
 2. Clone your fork
 
 ```bash
-git clone https://github.com/@your_username/yt_tools_extension
+git clone https://github.com/@your_username/yt-tools-extension
 ```
 
 3. Create your Feature Branch
