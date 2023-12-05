@@ -26,3 +26,4 @@ jobs:
             git commit -m "[bot] Update README.md changes -> $(git rev-parse --short HEAD)"
             git push origin $(git branch --show-current)
           fi
+          
