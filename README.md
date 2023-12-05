@@ -7,6 +7,8 @@
 
 "This extension allows you to enjoy several tools for the YouTube page."
 
+<a href=https://chromewebstore.google.com/detail/youtube-tools/oaojlpamigpmodndhjbnbpbdfhegdfef >Download this extension in the chrome store here.</a>
+
 ![use-extension-gif](https://github.com/RomanFama592/yt-tools-extension/blob/main/docs/images/use-extension.gif?raw=true)
 
 </div>
