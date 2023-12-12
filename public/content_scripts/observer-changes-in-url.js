@@ -4,7 +4,7 @@ let lasthref = ""
 let functionsDismount = [() => { },]
 const functions = [autoSkipAds, autoLike];
 
-setInterval(() => {
+setInterval(async () => {
     if (lasthref === window.location.href) {
         return;
     }
@@ -16,8 +16,8 @@ setInterval(() => {
     functionsDismount.map(cb => { cb() })
 
     /* The code is creating a new array called `tempFunctions` by performing the following operations: */
-    let tempFunctions = functions
-        .map(cb => cb())
+    let tempFunctions = await functions
+        .map(async cb => await cb())
         .filter(value => typeof value === "function")
 
     /* The line `functionsDismount = tempFunctions` is assigning the value of the `tempFunctions` array
