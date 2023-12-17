@@ -1,10 +1,10 @@
 import "../assets/css/Item.css";
-import Options from "../assets/options.ts";
+import Options from "../assets/ts/options.ts";
 import { ReactNode, SyntheticEvent, useContext } from "react";
 import { ModalContext } from "../context/HandlerModal.tsx";
 
 interface ItemProps {
-    children: ReactNode
+    children?: ReactNode
     id: string;
     handlerModal?: (event: SyntheticEvent) => void;
     contentModal?: ReactNode
@@ -12,6 +12,7 @@ interface ItemProps {
 
 export default function Item({ children, id, handlerModal, contentModal }: ItemProps) {
     const { title, description } = Options[id];
+    const className = `item ${contentModal !== undefined ? "pointer" : ""}`
 
     const contextUsedModal = useContext(ModalContext)
 
@@ -23,21 +24,22 @@ export default function Item({ children, id, handlerModal, contentModal }: ItemP
 
     const constructorContentModal = () => {
         return ((event: SyntheticEvent) => {
-            if (contentModal) {
-                setModalContent(
-                    <>
-                        <h2 className="modal title" title={title}>{title}</h2>
-                        <p className="modal description" title={description}>{description}</p>
-                        {contentModal}
-                    </>
-                )
-                if(handlerModal)handlerModal(event)
+            if (!contentModal) {
+                return;
             }
+            setModalContent(
+                <div className="modal-header">
+                    <h2 className="title" title={title}>{title}</h2>
+                    <p className="description" title={description}>{description}</p>
+                    {contentModal}
+                </div>
+            )
+            if (handlerModal) handlerModal(event)
         })
     }
 
     return (
-        <div className="item" onClick={constructorContentModal()}>
+        <div className={className} onClick={constructorContentModal()}>
             <div className="info">
                 <h2 className="title" title={title}>{title}</h2>
                 <p className="description" title={description}>{description}</p>
