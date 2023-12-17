@@ -1,25 +1,24 @@
 import { useState, useEffect } from "react";
 
 export default function useSaveInMemoryToExtension<T>({ id, initialValue }: { id: string, initialValue: T }) {
-    
+
     const [stateData, setData] = useState(initialValue);
     const [stateElementLoading, setElementLoading] = useState(false);
 
     useEffect(() => {
-        chrome.storage.local.get(id, (data) => {
+        chrome.storage.sync.get(id, (data) => {
             if (data[id] !== undefined) {
                 setData(data[id]);
             } else {
-                chrome.storage.local.set({ [id]: initialValue });
+                chrome.storage.sync.set({ [id]: initialValue });
             }
             setElementLoading(true)
         });
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [id, initialValue]);
 
     function handlerData(value: T) {
         return (async () => {
-            await chrome.storage.local.set({ [id]: value })
+            await chrome.storage.sync.set({ [id]: value })
             setData(value)
         })
     }
