@@ -1,0 +1,11 @@
+.TextInput {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px;
+    width: 10rem;
+}
+
+.TextInput > input{
+    width: 100%;
+}
