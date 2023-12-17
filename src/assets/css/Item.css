@@ -1,38 +1,59 @@
+/* Contenedor principal del elemento */
 .item {
   display: flex;
   flex-direction: row;
   width: 100%;
-  cursor: pointer;
+  height: auto;
   justify-content: space-between;
-  justify-items: baseline;
+  align-items: baseline;
   transition: background-color 0.3s ease;
+  padding: 10px; /* Añadido un espacio interno para mejorar la apariencia */
 }
 
-.item:hover {
+/* Estilo para elementos con la clase 'pointer' */
+.item.pointer {
+  cursor: pointer;
+}
+
+/* Estilo al pasar el ratón por encima */
+.item.pointer:hover {
   color: var(--shadow-color);
   background-color: var(--background-main);
 }
 
+/* Estilo para los elementos de texto 'title' y 'description' */
 .title,
 .description {
   margin: 5px;
   text-align: center;
 }
 
-.info>.title,
-.info>.description {
+/* Estilo para la sección 'info' */
+.info {
+  flex: 1; /* Permite que ocupe el espacio restante */
+  overflow: hidden; /* Evita que el contenido sobresalga */
+}
+
+/* Estilo para los elementos dentro de la sección 'info' */
+.info > .title,
+.info > .description {
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 200px;
 }
 
-
-.info>.title {
+/* Estilo específico para el título dentro de la sección 'info' */
+.info > .title {
   font-size: 1rem;
 }
 
-.info>.description {
+/* Estilo específico para la descripción dentro de la sección 'info' */
+.info > .description {
   font-size: 0.7rem;
+}
+
+/* Estilo para la sección 'info' cuando es hijo único (único elemento dentro del contenedor) */
+.info:only-child {
+  width: 100%;
 }
