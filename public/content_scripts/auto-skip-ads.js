@@ -6,8 +6,8 @@
  * @returns {Element | undefined} The button element that is used to skip ads on a webpage.
  */
 function getButtonSkipAds() {
-    const moduleAds = $(CONSTANTS.classModuleAds);
-    return $(CONSTANTS.classButtonSkipAds, moduleAds);
+    const moduleAds = $(SELECTORS.selectorModuleAds);
+    return $(SELECTORS.selectorButtonSkipAds, moduleAds);
 }
 
 /**
@@ -15,10 +15,10 @@ function getButtonSkipAds() {
  * if so, it clicks on the skip ads button.
  */
 async function cbModuleAds() {
-    let autoSkipEnabled = await browser.storage.local.get(CONSTANTS.nameValueStoreAutoSkipAds)
+    let autoSkipEnabled = await browser.storage.sync.get(CONSTANTS.nameValueStoreAutoSkipAds)
 
     if (!autoSkipEnabled) {
-        await browser.storage.local.set({ [CONSTANTS.nameValueStoreAutoSkipAds]: true });
+        await browser.storage.sync.set({ [CONSTANTS.nameValueStoreAutoSkipAds]: true });
         autoSkipEnabled = { [CONSTANTS.nameValueStoreAutoSkipAds]: true }
         console.log("autoSkipAds not exists")
     }
@@ -30,7 +30,7 @@ async function cbModuleAds() {
     const buttonAds = getButtonSkipAds()
 
     if (!buttonAds) {
-        console.log("Button SkipAds no exists check if change the selector: ", CONSTANTS.classButtonSkipAds)
+        console.log("Button SkipAds no exists check if change the selector: ", SELECTORS.selectorButtonSkipAds)
          return;
     }
     
@@ -46,10 +46,10 @@ async function cbModuleAds() {
  * called.
  */
 function autoSkipAds() {
-    const moduleads = $(CONSTANTS.classModuleAds)
+    const moduleads = $(SELECTORS.selectorModuleAds)
 
     if (!moduleads) {
-        console.log("Div ModuleAds no exists check if change the selector: ", CONSTANTS.classModuleAds)
+        console.log("Div ModuleAds no exists check if change the selector: ", SELECTORS.selectorModuleAds)
         return;
     }
 

@@ -2,7 +2,7 @@
 
 let lasthref = ""
 let functionsDismount = [() => { },]
-const functions = [autoSkipAds, autoLike];
+const functions = [autoUpdateSelectors, autoSkipAds, autoLike];
 
 setInterval(async () => {
     if (lasthref === window.location.href) {

@@ -3,20 +3,23 @@
 // Comprobar si el objeto "chrome" (para extensiones de Chrome) o "browser" (para extensiones de Firefox) está disponible.
 if (chrome) {
     browser = chrome;
-} 
+}
 if (!browser) {
     throw console.error("La API de extensión no está disponible.");
 }
 
 const CONSTANTS = {
-    "nameValueStoreAutoSkipAds":"autoSkipAds",
-    "nameValueStoreAutoLike":"autoLike",
-    "nameValueStoreAutoLike_Time":"autoLike.Time",
-    "classModuleAds": "#movie_player > div.video-ads.ytp-ad-module",
-    "classButtonSkipAds": ".ytp-ad-skip-button-modern.ytp-button",
-    "classVideoTitle": "#title > h1 > yt-formatted-string",
-    "idSegmentedButtonLike": "#segmented-like-button",
-    "classButtonLike": "#segmented-like-button > ytd-toggle-button-renderer > yt-button-shape > button",
+    "nameValueStoreAutoSkipAds": "autoSkipAds",
+    "nameValueStoreAutoLike": "autoLike",
+    "nameValueStoreAutoLike_Time": "autoLike.Time",
+    "initPartIdForSelectors": "changeSelector.",
+}
+
+const SELECTORS = {
+    "selectorModuleAds": "#movie_player > div.video-ads.ytp-ad-module",
+    "selectorButtonSkipAds": ".ytp-ad-skip-button-slot > span > .ytp-ad-skip-button-modern.ytp-button",
+    "selectorVideoTitle": "#title > h1 > yt-formatted-string",
+    "selectorButtonLike": "#top-level-buttons-computed > segmented-like-dislike-button-view-model > yt-smartimation > div > div > like-button-view-model > toggle-button-view-model > button"
 }
 
 

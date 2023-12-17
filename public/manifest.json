@@ -28,6 +28,7 @@
             ],
             "js": [
                 "content_scripts/functions.js",
+                "content_scripts/auto-update-selectors.js",
                 "content_scripts/auto-skip-ads.js",
                 "content_scripts/auto-like.js",
                 "content_scripts/observer-changes-in-url.js"
