@@ -5,8 +5,10 @@
 }
 
 body {
-  width: 450px;
+  width: 100%;
+  min-width: 30rem;
   height: auto;
+  max-height: 65rem;
 }
 
 :root {
