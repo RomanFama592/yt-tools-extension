@@ -23,21 +23,15 @@ async function autoLike() {
     if (!autoLike) {
         await browser.storage.sync.set({ [CONSTANTS.nameValueStoreAutoLike]: true });
         autoLike = { [CONSTANTS.nameValueStoreAutoLike]: 1 }
-        console.log("autoLike not exists")
-    }
-
-    if (!autoLike[CONSTANTS.nameValueStoreAutoLike]) {
-        return;
     }
 
     if (!time?.[CONSTANTS.nameValueStoreAutoLike_Time]) {
-        console.log("no exists time in autoLike")
         browser.storage.sync.set({ [CONSTANTS.nameValueStoreAutoLike_Time]: 1 });
         time[CONSTANTS.nameValueStoreAutoLike_Time] = 1
     }
 
     if (!$(SELECTORS.selectorVideoTitle)) {
-        console.log("Title the video no exists check if change the selector: ", SELECTORS.selectorVideoTitle)
+        console.error("If you are in a video and it does not automatically like it, it is because this selector is not found: ´selectorVideoTitle´, verify that it is still valid. Current selector: ", SELECTORS.selectorVideoTitle)
         return;
     }
 
@@ -53,7 +47,7 @@ async function autoLike() {
         }
 
         if (!buttonLike) {
-            console.log("Button Like no exists check if change the selector: ", SELECTORS.selectorButtonLike)
+            console.error("If you are in a video and it does not automatically like it, it is because this selector is not found: ´selectorButtonLike´, verify that it is still valid. Current selector: ", SELECTORS.selectorButtonLike)
             return;
         }
 
