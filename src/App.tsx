@@ -51,7 +51,7 @@ export default function App() {
           handlerModal={createHandlerModal(["[object HTMLInputElement]"])}
           contentModal={
             <>
-              <a href="" style={{ alignSelf: "center" }} target="_blank">Seguir tutorial de como usarlo en este link!</a>
+              <a href="https://github.com/RomanFama592/yt-tools-extension/blob/main/docs/how-to-use-change-selector.md" style={{ alignSelf: "center" }} target="_blank">Follow the tutorial on how to use it at this link.</a>
               {
                 nameSelectors.map(id => (
                   <Item
@@ -60,7 +60,7 @@ export default function App() {
                   >
                     <SelectorsTextInput
                       id={"changeSelector." + id}
-                      placeholder="put the js path here..."
+                      placeholder="put the selector here..."
                       initialValue={Selectors[id]}
                     />
                   </Item>
