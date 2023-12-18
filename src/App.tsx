@@ -5,7 +5,9 @@ import Item from "./components/Item"
 import Modal from "./components/Modal"
 import Switch from "./components/Switch.tsx"
 import CounterInput from "./components/CounterInput.tsx"
+import SelectorsTextInput from "./components/SelectorsTextInput.tsx"
 import { ModalContext } from "./context/HandlerModal.tsx"
+import Selectors from "./assets/ts/selectors.ts"
 
 export default function App() {
   const contextModal = useContext(ModalContext)
@@ -15,6 +17,8 @@ export default function App() {
   }
 
   const { modalState, createHandlerModal } = contextModal
+
+  const nameSelectors = Object.keys(Selectors)
 
   return (
     <>
@@ -42,6 +46,28 @@ export default function App() {
           }>
           <Switch id="autoLike"></Switch>
         </Item>
+        <Item
+          id="changeSelector"
+          handlerModal={createHandlerModal(["[object HTMLInputElement]"])}
+          contentModal={
+            <>
+              <a href="https://github.com/RomanFama592/yt-tools-extension/blob/main/docs/how-to-use-change-selector.md" style={{ alignSelf: "center" }} target="_blank">Follow the tutorial on how to use it at this link.</a>
+              {
+                nameSelectors.map(id => (
+                  <Item
+                    key={id}
+                    id={"changeSelector." + id}
+                  >
+                    <SelectorsTextInput
+                      id={"changeSelector." + id}
+                      placeholder="put the selector here..."
+                      initialValue={Selectors[id]}
+                    />
+                  </Item>
+                ))
+              }
+            </>
+          } />
       </div>
     </>
   )

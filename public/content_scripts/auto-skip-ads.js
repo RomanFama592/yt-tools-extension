@@ -6,8 +6,7 @@
  * @returns {Element | undefined} The button element that is used to skip ads on a webpage.
  */
 function getButtonSkipAds() {
-    const moduleAds = $(CONSTANTS.classModuleAds);
-    return $(CONSTANTS.classButtonSkipAds, moduleAds);
+    return $(SELECTORS.selectorButtonSkipAds);
 }
 
 /**
@@ -15,25 +14,20 @@ function getButtonSkipAds() {
  * if so, it clicks on the skip ads button.
  */
 async function cbModuleAds() {
-    let autoSkipEnabled = await browser.storage.local.get(CONSTANTS.nameValueStoreAutoSkipAds)
+    let autoSkipEnabled = await browser.storage.sync.get(CONSTANTS.nameValueStoreAutoSkipAds)
 
     if (!autoSkipEnabled) {
-        await browser.storage.local.set({ [CONSTANTS.nameValueStoreAutoSkipAds]: true });
+        await browser.storage.sync.set({ [CONSTANTS.nameValueStoreAutoSkipAds]: true });
         autoSkipEnabled = { [CONSTANTS.nameValueStoreAutoSkipAds]: true }
-        console.log("autoSkipAds not exists")
-    }
-
-    if (!autoSkipEnabled[CONSTANTS.nameValueStoreAutoSkipAds]) {
-         return;
     }
 
     const buttonAds = getButtonSkipAds()
 
     if (!buttonAds) {
-        console.log("Button SkipAds no exists check if change the selector: ", CONSTANTS.classButtonSkipAds)
-         return;
+        console.error("If you are in a video and the advertising does not automatically skip, it is because this selector is not found: ´selectorButtonSkipAds´, verify that it is still valid. Current selector: ", SELECTORS.selectorButtonSkipAds)
+        return;
     }
-    
+
     buttonAds.click();
     console.log("skiped ads!")
 }
@@ -46,10 +40,10 @@ async function cbModuleAds() {
  * called.
  */
 function autoSkipAds() {
-    const moduleads = $(CONSTANTS.classModuleAds)
+    const moduleads = $(SELECTORS.selectorModuleAds)
 
     if (!moduleads) {
-        console.log("Div ModuleAds no exists check if change the selector: ", CONSTANTS.classModuleAds)
+        console.error("If you are in a video and the advertising does not automatically skip, it is because this selector is not found: ´selectorModuleAds´, verify that it is still valid. Current selector: ", SELECTORS.selectorModuleAds)
         return;
     }
 
