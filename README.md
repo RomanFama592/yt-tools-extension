@@ -40,11 +40,13 @@
 ├── docs/
 │     ├── images/
 │     │     └── use-extension.gif
-│     └── README.md.template.md
+│     ├── README.md.template.md
+│     └── how-to-use-change-selector.md
 ├── public/
 │     ├── content_scripts/
 │     │     ├── auto-like.js
 │     │     ├── auto-skip-ads.js
+│     │     ├── auto-update-selectors.js
 │     │     ├── functions.js
 │     │     └── observer-changes-in-url.js
 │     ├── icons/
@@ -61,12 +63,16 @@
 │     │     │     ├── Item.css
 │     │     │     ├── Modal.css
 │     │     │     ├── Switch.css
+│     │     │     ├── TextInput.css
 │     │     │     └── index.css
-│     │     └── options.ts
+│     │     └── ts/
+│     │          ├── options.ts
+│     │          └── selectors.ts
 │     ├── components/
 │     │     ├── CounterInput.tsx
 │     │     ├── Item.tsx
 │     │     ├── Modal.tsx
+│     │     ├── SelectorsTextInput.tsx
 │     │     └── Switch.tsx
 │     ├── context/
 │     │     └── HandlerModal.tsx
