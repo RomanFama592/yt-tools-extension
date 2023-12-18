@@ -22,25 +22,26 @@ const Options: IOptions = {
   },
   "changeSelector": {
     "title": "DEBUG: Change Selectors",
-    "description": ""
+    "description": "Modify the HTML elements selectors at your discretion, taking full responsibility for the changes. Refer to the specified tutorial for guidance during the modification process."
   },
   "changeSelector.selectorModuleAds": {
     "title": "selector ModuleAds",
-    "description": ""
+    "description": "Specify the selector for the module containing ads."
   },
   "changeSelector.selectorButtonSkipAds": {
     "title": "selector ButtonSkipAds",
-    "description": ""
+    "description": "Specify the selector for the button to skip ads."
   },
   "changeSelector.selectorVideoTitle": {
     "title": "selector VideoTitle",
-    "description": ""
+    "description": "Specify the selector for the video title."
   },
   "changeSelector.selectorButtonLike": {
     "title": "selector ButtonLike",
-    "description": ""
+    "description": "Specify the selector for the button to like the video."
   },
-}
+};
+
 
 export default Options
 
