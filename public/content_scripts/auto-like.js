@@ -55,7 +55,10 @@ async function autoLike() {
             return;
         }
 
-        buttonLike.click();
+        const click_event = new CustomEvent('click');
+        buttonLike.dispatchEvent(click_event);
+
+        //buttonLike.click();
         console.log("Auto Like!")
 
     }, Number(time[CONSTANTS.nameValueStoreAutoLike_Time]) * 1000)

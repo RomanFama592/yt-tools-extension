@@ -28,7 +28,10 @@ async function cbModuleAds() {
         return;
     }
 
-    buttonAds.click();
+    const click_event = new CustomEvent('click');
+    buttonAds.dispatchEvent(click_event);
+
+    //buttonAds.click();
     console.log("skiped ads!")
 }
 
