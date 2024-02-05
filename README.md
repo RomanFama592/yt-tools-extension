@@ -93,7 +93,8 @@
 ├── resize_icons.sh
 ├── tsconfig.json
 ├── tsconfig.node.json
-└── vite.config.ts
+├── vite.config.ts
+└── yarn.lock
 
 ```
 
